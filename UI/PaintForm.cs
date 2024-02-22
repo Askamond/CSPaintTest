@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +103,10 @@ namespace MVP.UI
         }
 
 
+        private void buttonTriangle_Click(object sender, EventArgs e)
+        {
+            drawType = DrawType.Triangle;
+        }
         #endregion
 
         #region Mouse Behaviour
@@ -145,6 +150,7 @@ namespace MVP.UI
 
         }
 
+
         private void paintSpace_MouseUp(object sender, MouseEventArgs e)
         {
             isPaint = false;
@@ -155,6 +161,9 @@ namespace MVP.UI
                 graphics.DrawRectangle(pen, startPoint.X, startPoint.Y, endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
             else if (drawType == DrawType.Line)
                 graphics.DrawLine(pen, startPoint, endPoint);
+            else if (drawType == DrawType.Triangle)
+                DrawTriangle();
+
         }
 
         private void paintSpace_MouseMove(object sender, MouseEventArgs e)
@@ -190,6 +199,9 @@ namespace MVP.UI
                     _graphics.DrawRectangle(pen, startPoint.X, startPoint.Y, endPoint.X - startPoint.X, endPoint.Y - startPoint.Y);
                 else if (drawType == DrawType.Line)
                     _graphics.DrawLine(pen, startPoint, endPoint);
+                else if (drawType == DrawType.Triangle)
+                    DrawTriangle(_graphics);
+
         }
 
         public void SetPenColor(Color color) 
@@ -198,6 +210,26 @@ namespace MVP.UI
             pen.Color = color;
         }
 
+        private void DrawTriangle()
+        {
+            Point[] trianglePoints =
+            {
+                new Point(startPoint.X, endPoint.Y),
+                new Point(endPoint.X, endPoint.Y),
+               new Point((startPoint.X + endPoint.X)/2, startPoint.Y)
+             };
+            graphics.DrawPolygon(pen, trianglePoints);
+        }
+        private void DrawTriangle(Graphics _graphics)
+        {
+            Point[] trianglePoints =
+            {
+                new Point(startPoint.X, endPoint.Y),
+                new Point(endPoint.X, endPoint.Y),
+               new Point((startPoint.X + endPoint.X)/2, startPoint.Y)
+             };
+            _graphics.DrawPolygon(pen, trianglePoints);
+        }
 
     }
 }

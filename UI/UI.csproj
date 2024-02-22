@@ -144,5 +144,11 @@
   <ItemGroup>
     <None Include="Resources\rectangle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangle-64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangle-64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

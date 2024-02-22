@@ -32,12 +32,13 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonRect = new System.Windows.Forms.Button();
             this.curColor = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonTriangle = new System.Windows.Forms.Button();
             this.buttonLine = new System.Windows.Forms.Button();
             this.colorButton = new System.Windows.Forms.Button();
             this.pencilButton = new System.Windows.Forms.Button();
+            this.buttonRect = new System.Windows.Forms.Button();
             this.buttonEraser = new System.Windows.Forms.Button();
             this.buttonEllipse = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -59,7 +60,7 @@
             this.toolBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolBar.Location = new System.Drawing.Point(0, 0);
             this.toolBar.Name = "toolBar";
-            this.toolBar.Size = new System.Drawing.Size(934, 105);
+            this.toolBar.Size = new System.Drawing.Size(984, 105);
             this.toolBar.TabIndex = 0;
             // 
             // saveButton
@@ -69,7 +70,7 @@
             this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.ForeColor = System.Drawing.Color.White;
-            this.saveButton.Location = new System.Drawing.Point(802, 10);
+            this.saveButton.Location = new System.Drawing.Point(861, 10);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(120, 30);
             this.saveButton.TabIndex = 10;
@@ -84,7 +85,7 @@
             this.clearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.ForeColor = System.Drawing.Color.White;
-            this.clearButton.Location = new System.Drawing.Point(802, 55);
+            this.clearButton.Location = new System.Drawing.Point(861, 55);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(120, 30);
             this.clearButton.TabIndex = 9;
@@ -104,24 +105,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // buttonRect
-            // 
-            this.buttonRect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonRect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.buttonRect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonRect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRect.ForeColor = System.Drawing.Color.White;
-            this.buttonRect.Image = global::UI.Properties.Resources.rectangle;
-            this.buttonRect.Location = new System.Drawing.Point(334, 10);
-            this.buttonRect.Name = "buttonRect";
-            this.buttonRect.Size = new System.Drawing.Size(75, 75);
-            this.buttonRect.TabIndex = 7;
-            this.buttonRect.Text = "Rectangle";
-            this.buttonRect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonRect.UseVisualStyleBackColor = false;
-            this.buttonRect.Click += new System.EventHandler(this.buttonRect_Click);
-            // 
             // curColor
             // 
             this.curColor.BackColor = System.Drawing.Color.White;
@@ -134,6 +117,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.buttonTriangle);
             this.panel1.Controls.Add(this.buttonLine);
             this.panel1.Controls.Add(this.colorButton);
             this.panel1.Controls.Add(this.pencilButton);
@@ -142,8 +126,28 @@
             this.panel1.Controls.Add(this.buttonEllipse);
             this.panel1.Location = new System.Drawing.Point(276, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 99);
+            this.panel1.Size = new System.Drawing.Size(579, 99);
             this.panel1.TabIndex = 3;
+            // 
+            // buttonTriangle
+            // 
+            this.buttonTriangle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonTriangle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTriangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.buttonTriangle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonTriangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTriangle.ForeColor = System.Drawing.Color.White;
+            this.buttonTriangle.Image = global::UI.Properties.Resources.triangle_641;
+            this.buttonTriangle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonTriangle.Location = new System.Drawing.Point(496, 10);
+            this.buttonTriangle.Name = "buttonTriangle";
+            this.buttonTriangle.Size = new System.Drawing.Size(75, 75);
+            this.buttonTriangle.TabIndex = 8;
+            this.buttonTriangle.Text = "Triangle";
+            this.buttonTriangle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonTriangle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonTriangle.UseVisualStyleBackColor = false;
+            this.buttonTriangle.Click += new System.EventHandler(this.buttonTriangle_Click);
             // 
             // buttonLine
             // 
@@ -200,6 +204,24 @@
             this.pencilButton.UseVisualStyleBackColor = false;
             this.pencilButton.Click += new System.EventHandler(this.pencilButton_Click);
             // 
+            // buttonRect
+            // 
+            this.buttonRect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.buttonRect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonRect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRect.ForeColor = System.Drawing.Color.White;
+            this.buttonRect.Image = global::UI.Properties.Resources.rectangle;
+            this.buttonRect.Location = new System.Drawing.Point(334, 10);
+            this.buttonRect.Name = "buttonRect";
+            this.buttonRect.Size = new System.Drawing.Size(75, 75);
+            this.buttonRect.TabIndex = 7;
+            this.buttonRect.Text = "Rectangle";
+            this.buttonRect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRect.UseVisualStyleBackColor = false;
+            this.buttonRect.Click += new System.EventHandler(this.buttonRect_Click);
+            // 
             // buttonEraser
             // 
             this.buttonEraser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -241,7 +263,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 689);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(934, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -251,7 +273,7 @@
             this.paintSpace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paintSpace.Location = new System.Drawing.Point(0, 105);
             this.paintSpace.Name = "paintSpace";
-            this.paintSpace.Size = new System.Drawing.Size(934, 584);
+            this.paintSpace.Size = new System.Drawing.Size(984, 584);
             this.paintSpace.TabIndex = 2;
             this.paintSpace.TabStop = false;
             this.paintSpace.Paint += new System.Windows.Forms.PaintEventHandler(this.paintSpace_Paint);
@@ -263,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 711);
+            this.ClientSize = new System.Drawing.Size(984, 711);
             this.Controls.Add(this.paintSpace);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolBar);
@@ -297,6 +319,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button buttonTriangle;
     }
 }
 
